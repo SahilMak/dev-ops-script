@@ -13,7 +13,7 @@ sudo update-alternatives --config javac
 echo "java 8 installed and configured"
 
 echo "installing maven"
-wget https://s3.amazonaws.com/ws-devops-resources/apache-maven-3.5.4-bin.tar.gz
+sudo wget https://s3.amazonaws.com/ws-devops-resources/apache-maven-3.5.4-bin.tar.gz
 tar xvf apache-maven-3.5.4-bin.tar.gz
 sudo mv apache-maven-3.5.4 /usr/apache
 sudo chmod 777 -R /usr/apache/apache-maven-3.5.4
@@ -30,7 +30,7 @@ echo "maven installed"
 # echo "maven installed"
 
 echo "downloading tomcat tar.gz"
-wget https://s3.amazonaws.com/ws-devops-resources/apache-tomcat-9.0.10.tar.gz
+sudo wget https://s3.amazonaws.com/ws-devops-resources/apache-tomcat-9.0.10.tar.gz
 sudo tar -xzvf apache-tomcat-9.0.10.tar.gz
 echo "giving ec2-user permission for tomcat"
 sudo chmod 777 -R apache-tomcat-9.0.10
