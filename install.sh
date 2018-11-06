@@ -6,7 +6,7 @@ sudo chmod 777 /usr/apache
 cd /tmp
 
 echo "installing java 8"
-wget https://s3.amazonaws.com/ws-devops-resources/jdk-8u171-linux-x64.rpm
+sudo wget https://s3.amazonaws.com/ws-devops-resources/jdk-8u171-linux-x64.rpm
 sudo yum install -y jdk-8u171-linux-x64.rpm
 sudo update-alternatives --config java
 sudo update-alternatives --config javac
@@ -30,11 +30,11 @@ echo "maven installed"
 # echo "maven installed"
 
 echo "downloading tomcat tar.gz"
-sudo wget https://s3.amazonaws.com/ws-devops-resources/apache-tomcat-9.0.10.tar.gz
+wget https://s3.amazonaws.com/ws-devops-resources/apache-tomcat-9.0.10.tar.gz
 sudo tar -xzvf apache-tomcat-9.0.10.tar.gz
 echo "giving ec2-user permission for tomcat"
 sudo chmod 777 -R apache-tomcat-9.0.10
-sudo mv apache-tomcat-8.5.30 /usr/apache/
+sudo mv apache-tomcat-9.0.10 /usr/apache/
 sudo sed -i 's/<Connector port="8080"/<Connector port="8090"/' /usr/apache/apache-tomcat-9.0.10/conf/server.xml
 sudo sh /usr/apache/apache-tomcat-9.0.10/bin/startup.sh
 echo "CATALINA_HOME=/usr/apache/apache-tomcat-9.0.10"  >> ~/.bashrc
